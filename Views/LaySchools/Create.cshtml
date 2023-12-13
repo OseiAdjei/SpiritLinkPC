@@ -1,0 +1,72 @@
+﻿@model SpiritLink.Models.LaySchool
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LaySchool</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SchoolName" class="control-label"></label>
+                <input asp-for="SchoolName" class="form-control" />
+                <span asp-validation-for="SchoolName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SchoolId" class="control-label"></label>
+                <input asp-for="SchoolId" class="form-control" />
+                <span asp-validation-for="SchoolId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PastorName" class="control-label"></label>
+                <select asp-for="PastorName" class ="form-control" asp-items="ViewBag.PastorName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberName" class="control-label"></label>
+                <select asp-for="MemberName" class ="form-control" asp-items="ViewBag.MemberName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConvertName" class="control-label"></label>
+                <select asp-for="ConvertName" class ="form-control" asp-items="ViewBag.ConvertName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstTimerName" class="control-label"></label>
+                <select asp-for="FirstTimerName" class ="form-control" asp-items="ViewBag.FirstTimerName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaderId" class="control-label"></label>
+                <select asp-for="LeaderId" class ="form-control" asp-items="ViewBag.LeaderId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaderName" class="control-label"></label>
+                <select asp-for="LeaderName" class ="form-control" asp-items="ViewBag.LeaderName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberId" class="control-label"></label>
+                <input asp-for="MemberId" class="form-control" />
+                <span asp-validation-for="MemberId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

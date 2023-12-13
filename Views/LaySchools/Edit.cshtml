@@ -1,0 +1,46 @@
+﻿@model SpiritLink.Models.LaySchool
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>LaySchool</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SchoolName" />
+            <input type="hidden" asp-for="SchoolId" />
+            <input type="hidden" asp-for="PastorName" />
+            <input type="hidden" asp-for="MemberName" />
+            <input type="hidden" asp-for="ConvertName" />
+            <input type="hidden" asp-for="FirstTimerName" />
+            <input type="hidden" asp-for="LeaderId" />
+            <input type="hidden" asp-for="LeaderName" />
+            <div class="form-group">
+                <label asp-for="MemberId" class="control-label"></label>
+                <input asp-for="MemberId" class="form-control" />
+                <span asp-validation-for="MemberId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
